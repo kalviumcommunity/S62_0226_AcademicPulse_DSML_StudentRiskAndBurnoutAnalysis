@@ -184,3 +184,44 @@ All members collaborate on documentation, testing, and final presentation.
 
 ## Conclusion
 AcademicPulse demonstrates how academic and behavioral data can be combined to detect early signs of student burnout and academic risk. By focusing on interpretability, structured workflows, and end-to-end integration, the project serves as a practical MVP for early intervention and data-driven decision-making in educational institutions.
+
+## Local Development Environment Setup
+
+### Operating System
+Windows 11 (or your OS)
+
+### Python Version
+Python 3.11.5
+
+Verification Command:
+python --version
+
+Output:
+Python 3.11.5
+
+### Anaconda Version
+conda 24.1.2
+
+Verification Command:
+conda --version
+
+Output:
+conda 24.1.2
+
+### Conda Environment
+Created custom environment:
+
+conda create -n ds_sprint python=3.11
+conda activate ds_sprint
+
+Environment successfully activated.
+
+### Validation
+Ran Python REPL and executed:
+
+print("Data Science Environment Ready")
+
+Output confirmed environment working correctly.
+
+### Proof
+![Initialising](Initialising.png)
