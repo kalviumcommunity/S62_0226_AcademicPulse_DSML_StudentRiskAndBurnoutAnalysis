@@ -230,26 +230,32 @@ Output confirmed environment working correctly.
 
 ## Project Insights
 
-This project demonstrates that academic risk is not driven by grades alone but emerges from a combination of behavioral and academic patterns. Students with declining sleep duration, increasing assignment delays, and reduced study consistency tend to cluster into higher-risk groups even before significant drops in exam scores occur.
+This project reveals that early academic risk is rarely caused by grades alone. Instead, risk emerges from a combination of academic performance trends and behavioral patterns such as declining sleep duration, inconsistent study hours, increasing assignment delays, and reduced engagement levels.
 
-Attendance and engagement levels show strong relationships with performance trends, indicating that behavioral consistency plays a critical role in academic stability. The anomaly detection model highlights students whose patterns deviate significantly from typical behavior, allowing earlier identification of potential burnout. The combined Burnout Score and Academic Risk Score provide a more holistic and interpretable early warning system compared to traditional grade-based monitoring.
+Exploratory analysis showed meaningful relationships between attendance and exam performance, as well as between sleep consistency and score stability. Students exhibiting irregular behavioral signals often clustered into higher-risk groups even before experiencing significant grade drops. This demonstrates the importance of monitoring leading indicators rather than reacting only to final outcomes.
+
+The clustering model (KMeans) successfully grouped students into interpretable behavioral categories such as Healthy, Burnout-Prone, and High-Risk. Anomaly detection (Isolation Forest) further helped identify students with unusual academic or behavioral patterns that may require closer attention.
+
+By combining Burnout Score and Academic Risk Score into a unified risk level (Low, Medium, High), the system provides an early-warning framework that is more proactive, interpretable, and actionable than traditional grade-based monitoring systems.
 
 ---
 
 ## Assumptions
 
-This analysis assumes that the dataset accurately represents student academic and behavioral behavior and that recorded variables such as attendance percentage, study hours, sleep duration, submission delay, and engagement level are reliable indicators of student well-being and performance.
+This project assumes that the collected dataset accurately reflects student academic and behavioral patterns. Variables such as attendance percentage, study hours, sleep duration, assignment delay, and engagement level are assumed to be meaningful proxies for student well-being and performance stability.
 
-It assumes that clustering results correspond meaningfully to real-world risk categories (Low, Medium, High), even though explicit labeled outcomes are not provided. The project also assumes that relationships between behavioral signals and academic outcomes remain relatively consistent across students.
+It is assumed that clustering patterns correspond to realistic risk groupings, even though explicit labeled outcomes (such as confirmed dropout cases) are not available. The model assumes that similar behavioral patterns imply similar academic risk levels.
 
-Where synthetic or simulated data is used, it is assumed to reasonably approximate realistic institutional patterns for demonstration purposes.
+Where synthetic or simulated data is used, it is assumed to reasonably approximate real-world student behavior for MVP demonstration purposes. Additionally, it is assumed that the relationships observed during analysis remain relatively stable across different student populations.
 
 ---
 
 ## Limitations
 
-The project is limited by dataset size and potential reliance on simulated data, which may not fully capture the diversity and complexity of real educational environments.
+The system is limited by dataset size and potential reliance on simulated data, which may not fully represent the complexity and diversity of real educational environments. Real-world student performance is influenced by many external factors that are not included in this model.
 
-The clustering approach identifies patterns but does not establish causation. Isolation Forest may flag unusual patterns that are not necessarily harmful, leading to possible false positives. Additionally, the system does not incorporate psychological, socioeconomic, or external environmental factors that may significantly influence academic performance.
+Clustering techniques identify patterns but do not establish causation. Therefore, risk categories should be interpreted as pattern-based groupings rather than definitive predictions. Similarly, Isolation Forest may flag statistically unusual behavior that is not necessarily harmful, leading to possible false positives.
 
-Therefore, the results should be interpreted as early warning indicators rather than definitive predictions of academic failure or dropout.
+The model does not incorporate psychological, socioeconomic, institutional, or environmental variables that may significantly affect student outcomes. As a result, the system should be viewed as a decision-support tool for early intervention rather than a replacement for human academic evaluation.
+
+Future improvements could include larger real-world datasets, supervised validation using labeled risk outcomes, and inclusion of additional contextual features to enhance robustness and generalizability.
