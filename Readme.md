@@ -225,3 +225,31 @@ Output confirmed environment working correctly.
 
 ### Proof
 ![Initialising](Initialising.png)
+
+# Early Student Risk Detection using Academic and Behavioral Signals
+
+## Project Insights
+
+This project demonstrates that academic risk is not driven by grades alone but emerges from a combination of behavioral and academic patterns. Students with declining sleep duration, increasing assignment delays, and reduced study consistency tend to cluster into higher-risk groups even before significant drops in exam scores occur.
+
+Attendance and engagement levels show strong relationships with performance trends, indicating that behavioral consistency plays a critical role in academic stability. The anomaly detection model highlights students whose patterns deviate significantly from typical behavior, allowing earlier identification of potential burnout. The combined Burnout Score and Academic Risk Score provide a more holistic and interpretable early warning system compared to traditional grade-based monitoring.
+
+---
+
+## Assumptions
+
+This analysis assumes that the dataset accurately represents student academic and behavioral behavior and that recorded variables such as attendance percentage, study hours, sleep duration, submission delay, and engagement level are reliable indicators of student well-being and performance.
+
+It assumes that clustering results correspond meaningfully to real-world risk categories (Low, Medium, High), even though explicit labeled outcomes are not provided. The project also assumes that relationships between behavioral signals and academic outcomes remain relatively consistent across students.
+
+Where synthetic or simulated data is used, it is assumed to reasonably approximate realistic institutional patterns for demonstration purposes.
+
+---
+
+## Limitations
+
+The project is limited by dataset size and potential reliance on simulated data, which may not fully capture the diversity and complexity of real educational environments.
+
+The clustering approach identifies patterns but does not establish causation. Isolation Forest may flag unusual patterns that are not necessarily harmful, leading to possible false positives. Additionally, the system does not incorporate psychological, socioeconomic, or external environmental factors that may significantly influence academic performance.
+
+Therefore, the results should be interpreted as early warning indicators rather than definitive predictions of academic failure or dropout.
