@@ -42,3 +42,10 @@ Thumbs.db
 # Logs
 logs/
 *.log
+
+academicpulse_env/
+pycache/
+*.pyc
+.env
+*.csv (if datasets are large)
+*.ipynb_checkpoints/
