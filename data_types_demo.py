@@ -1,3 +1,5 @@
+#Numeric, string, and type conversion demonstration
+
 # Numeric types
 num1 = 10
 num2 = 3.5
