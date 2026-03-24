@@ -355,3 +355,5 @@ Maria is flagged as "at-risk" with 78% probability. The dashboard alerts her cou
 **The ripple effect:** This single preprocessing mistake corrupted every subsequent stage—EDA showed misleading correlations, feature engineering built on bad data, and the model learned wrong patterns. No amount of advanced algorithms could fix garbage data.
 
 **Lesson learned:** Data quality isn't just the first step—it's the foundation everything else depends on. Time spent cleaning data is never wasted.
+
+Data preprocessing
