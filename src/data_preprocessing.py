@@ -1,26 +1,23 @@
-# src/data_preprocessing.py
-
 import pandas as pd
 import numpy as np
 import random
+import os
+from sklearn.model_selection import train_test_split
+
+from src.config import DATA_PATH, TEST_SIZE, TARGET_COLUMN
+
 
 def generate_student_data(n_students=500):
-    """
-    Generate synthetic student data with realistic patterns
-    """
     np.random.seed(42)
     random.seed(42)
     
     data = []
     
     for student_id in range(1, n_students + 1):
-        # Generate base student profile
         base_performance = np.random.normal(75, 10)
         
-        # Academic features
         attendance = np.clip(np.random.normal(85, 15), 40, 100)
         
-        # Exam scores over 4 exams
         exam_scores = []
         trend = np.random.choice(['improving', 'declining', 'stable'], p=[0.3, 0.3, 0.4])
         
@@ -34,13 +31,11 @@ def generate_student_data(n_students=500):
             
             exam_scores.append(np.clip(score, 30, 100))
         
-        # Behavioral features
         study_hours = np.clip(np.random.normal(20, 8), 5, 40)
         sleep_hours = np.clip(np.random.normal(7.5, 1.5), 4, 12)
         submission_delay = np.clip(np.random.exponential(1), 0, 7)
         engagement = np.clip(np.random.normal(7, 2), 1, 10)
         
-        # Calculate risk factors
         risk_factors = 0
         if attendance < 70:
             risk_factors += 1
@@ -55,7 +50,6 @@ def generate_student_data(n_students=500):
         if engagement < 4:
             risk_factors += 2
         
-        # Determine risk level
         if risk_factors >= 4:
             risk_level = 'High'
         elif risk_factors >= 2:
@@ -82,28 +76,46 @@ def generate_student_data(n_students=500):
     
     df = pd.DataFrame(data)
     
-    # Calculate derived features
     df['avg_exam_score'] = df[['exam1', 'exam2', 'exam3', 'exam4']].mean(axis=1)
     df['exam_volatility'] = df[['exam1', 'exam2', 'exam3', 'exam4']].std(axis=1)
     
     return df
 
-# Generate and save data
-if __name__ == "__main__":
+
+def load_data():
+    return pd.read_csv(DATA_PATH)
+
+
+def clean_data(df):
+    df = df.dropna()
+
+    # Drop ID column (not useful for ML)
+    if "student_id" in df.columns:
+        df = df.drop("student_id", axis=1)
+
+    return df
+
+
+def split_data(df):
+    X = df.drop(TARGET_COLUMN, axis=1)
+    y = df[TARGET_COLUMN]
+
+    return train_test_split(X, y, test_size=TEST_SIZE, random_state=42)
+
+
+def generate_and_save():
     print("Generating student data...")
+    
     df = generate_student_data(500)
     
-    # Create data folder if it doesn't exist
-    import os
-    os.makedirs('data/raw', exist_ok=True)
+    os.makedirs("data/raw", exist_ok=True)
     
-    # Save to CSV
-    output_path = 'data/raw/student_data.csv'
-    df.to_csv(output_path, index=False)
+    df.to_csv(DATA_PATH, index=False)
     
-    print(f"Data generated successfully! Saved to {output_path}")
-    print(f"Shape: {df.shape}")
-    print(f"\nFirst 5 rows:")
+    print(f"Saved to {DATA_PATH}")
     print(df.head())
-    print(f"\nRisk distribution:")
-    print(df['actual_risk'].value_counts())
+    print(df["actual_risk"].value_counts())
+
+
+if __name__ == "__main__":
+    generate_and_save()
