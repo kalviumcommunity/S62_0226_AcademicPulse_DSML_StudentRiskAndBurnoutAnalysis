@@ -8,3 +8,5 @@ def evaluate_model(model, X_test, y_test):
     print("Accuracy:", acc)
 
     return acc
+
+    
