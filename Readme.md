@@ -487,3 +487,15 @@ Established a professional ML project structure that supports clean workflow, ma
 
 ### Summary
 Baseline comparison validates that the trained model is effective and performs significantly better than naive predictions.
+
+---
+
+
+## Virtual Environment Setup
+
+- Created an isolated Python environment using `venv`  
+- Activated environment before installing dependencies and running code  
+- Installed all required ML libraries inside the virtual environment  
+- Used `pip freeze` to generate `requirements.txt` for reproducibility  
+- Ensured `venv/` is excluded from version control using `.gitignore`  
+- Maintained consistent and reproducible development environment  
