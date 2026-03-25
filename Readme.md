@@ -493,6 +493,8 @@ Baseline comparison validates that the trained model is effective and performs s
 
 ## Virtual Environment Setup
 
+Ensure virtual environment is activated before running any scripts.
+
 - Created an isolated Python environment using `venv`  
 - Activated environment before installing dependencies and running code  
 - Installed all required ML libraries inside the virtual environment  
