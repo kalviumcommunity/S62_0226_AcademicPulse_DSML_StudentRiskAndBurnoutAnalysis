@@ -1,12 +1,27 @@
 # AcademicPulse  
-**Early Student Risk Detection using Academic and Behavioral Signals**
+### Early Student Risk Detection using Academic and Behavioral Signals  
 
-## Overview
-AcademicPulse is an end-to-end data science project that analyzes student academic and behavioral data to identify early signs of burnout and estimate academic risk.  
+---
 
-The system demonstrates the complete data science workflow — from raw data processing and exploratory data analysis to machine learning–based risk detection and inference through an interactive application.
+## Project Overview
 
-The primary goal is early identification of at-risk students so that preventive action can be taken before academic decline or dropout risk becomes visible.
+AcademicPulse is an end-to-end machine learning project designed to detect early signs of student burnout and academic risk using both academic performance and behavioral data.
+
+Educational institutions often rely on grades and attendance to monitor student performance. However, early warning signals typically appear much earlier through behavioral patterns such as declining study consistency, poor sleep habits, delayed assignment submissions, and reduced engagement. These indicators often remain unnoticed until academic performance drops significantly.
+
+This project leverages machine learning to uncover hidden relationships between multiple factors such as attendance, performance trends, study habits, sleep patterns, and submission behavior. By analyzing these variables together, the system identifies meaningful patterns and detects early risk signals that cannot be captured through traditional rule-based methods.
+
+---
+
+## Objective
+
+The goal of this project is to build a system that can:
+
+- Analyze student academic and behavioral patterns  
+- Detect early burnout signals  
+- Estimate academic risk levels (**Low**, **Medium**, **High**)  
+- Provide clear and interpretable insights for early intervention  
+
 
 ---
 
