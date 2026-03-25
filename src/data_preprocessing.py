@@ -4,7 +4,7 @@ import random
 import os
 from sklearn.model_selection import train_test_split
 
-from src.config import DATA_PATH, TEST_SIZE, TARGET_COLUMN
+from src.config import DATA_PATH, RANDOM_STATE, TEST_SIZE, TARGET_COLUMN
 
 
 def generate_student_data(n_students=500):
@@ -100,7 +100,7 @@ def split_data(df):
     X = df.drop(TARGET_COLUMN, axis=1)
     y = df[TARGET_COLUMN]
 
-    return train_test_split(X, y, test_size=TEST_SIZE, random_state=42)
+    return train_test_split(X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE)
 
 
 def generate_and_save():

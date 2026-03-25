@@ -1,20 +1,19 @@
 import joblib
 import pandas as pd
 
-from src.config import MODEL_PATH
-from src.feature_engineering import process_features
+from src.config import MODEL_PATH, PIPELINE_PATH
 
 
 def predict(input_data: dict):
     # Convert input to DataFrame
     df = pd.DataFrame([input_data])
 
-    # Load model
+    # Load model and pipeline
     model = joblib.load(MODEL_PATH)
+    pipeline = joblib.load(PIPELINE_PATH)
 
-    # Since we don't have separate train/test here,
-    # we pass same df twice just to reuse function
-    X_scaled, _, scaler = process_features(df.copy(), df.copy())
+    # Apply preprocessing (ONLY transform)
+    X_scaled = pipeline.transform(df)
 
     # Predict
     prediction = model.predict(X_scaled)

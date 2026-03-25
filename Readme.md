@@ -430,3 +430,24 @@ Built a complete ML training pipeline with preprocessing, feature engineering, a
 
 ###  Summary
 Established a reproducible environment and extended the ML pipeline with a working prediction system.
+
+
+
+
+## ML Project Structure
+
+- Organized the project into a structured and modular folder layout  
+- Created separate directories for data, source code, models, reports, and logs  
+- Ensured clear separation of concerns across different stages of the ML pipeline  
+
+- `data/` contains raw and processed datasets  
+- `src/` contains all core pipeline modules (preprocessing, training, prediction, evaluation)  
+- `models/` stores trained model and preprocessing pipeline artifacts  
+- `reports/` and `logs/` reserved for evaluation outputs and experiment tracking  
+
+- Centralized configuration using `config.py` to avoid hardcoding  
+- Maintained separation between training, prediction, and evaluation logic  
+- Ensured reproducibility and scalability of the pipeline  
+
+### Summary
+Established a professional ML project structure that supports clean workflow, maintainability, and future scalability.
