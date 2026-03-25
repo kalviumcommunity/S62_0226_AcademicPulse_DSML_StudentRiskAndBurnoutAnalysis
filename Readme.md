@@ -466,3 +466,24 @@ Established a reproducible environment and extended the ML pipeline with a worki
 
 ### Summary
 Established a professional ML project structure that supports clean workflow, maintainability, and future scalability.
+
+---
+
+
+## Baseline Model Comparison
+
+- Implemented a baseline model using `DummyClassifier` with the "most frequent" strategy  
+- The baseline model predicts the majority class for all inputs  
+- This provides a simple reference point to evaluate model performance  
+
+- Baseline model accuracy: **~0.79**  
+- Trained Random Forest model accuracy: **~0.91**  
+
+- The trained model shows a significant improvement of ~12% over the baseline  
+- This confirms that the model is learning meaningful patterns from the data  
+
+- The baseline model fails to capture minority classes (Medium and High risk)  
+- The trained model performs better by identifying patterns across multiple features  
+
+### Summary
+Baseline comparison validates that the trained model is effective and performs significantly better than naive predictions.
