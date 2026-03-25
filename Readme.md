@@ -356,4 +356,77 @@ Maria is flagged as "at-risk" with 78% probability. The dashboard alerts her cou
 
 **Lesson learned:** Data quality isn't just the first step—it's the foundation everything else depends on. Time spent cleaning data is never wasted.
 
-Data preprocessing
+
+
+## Model Training & Feature Engineering
+
+### Overview
+Implemented the machine learning pipeline for predicting student risk levels using structured academic and behavioral data.
+
+### Data Preprocessing
+- Loaded and cleaned student dataset  
+- Handled missing values and ensured data consistency  
+- Split dataset into training and testing sets  
+
+### Feature Engineering
+- Encoded categorical feature:
+  - `performance_trend` → numerical values  
+- Scaled numerical features using **StandardScaler**  
+- Ensured compatibility with machine learning models  
+
+### Model Training
+- Trained a **Random Forest Classifier**  
+- Used processed (encoded + scaled) features  
+- Ensured reproducibility using `random_state=42`  
+
+### Model Performance
+- Achieved **~91% accuracy** on test data  
+- Indicates strong predictive performance on student risk levels  
+
+### Model Saving
+- Saved trained model using **joblib**  
+- Enables reuse for inference without retraining  
+
+---
+
+### Summary
+Built a complete ML training pipeline with preprocessing, feature engineering, and model training achieving ~91% accuracy.
+
+
+
+## Setup Instructions
+
+1. Create virtual environment:
+   python -m venv venv
+
+2. Activate environment:
+   source venv/Scripts/activate  (Git Bash)
+   venv\Scripts\activate        (Windows PowerShell)
+
+3. Install dependencies:
+   pip install -r requirements.txt
+
+4. Run the project:
+   python main.py
+
+
+
+##  Dependency Management & Inference
+
+- Created a `requirements.txt` file with pinned versions to ensure reproducibility  
+- Managed dependencies using a virtual environment  
+- Ensured the project runs consistently across different systems  
+- Installed all required libraries using `pip install -r requirements.txt`  
+- Verified setup by recreating environment and running the pipeline  
+
+- Implemented an inference pipeline (`predict.py`)  
+- Loaded trained model using `joblib`  
+- Applied preprocessing (encoding + scaling) during prediction  
+- Generated risk predictions for new student data  
+
+###  Run Commands
+- Train model: `python main.py`  
+- Predict: `python -m src.predict`  
+
+###  Summary
+Established a reproducible environment and extended the ML pipeline with a working prediction system.
